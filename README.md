@@ -46,13 +46,21 @@ flowchart LR
 
 ## Results
 
-**Retrieval** — 24 control queries:
+**Retrieval** — evaluated on two separate sets of 24 control queries.
+
+*Development set* (used to tune the weights and design the hierarchy):
 
 | Strategy | Hit@1 | Hit@3 | Hit@5 | MRR |
 |---|---:|---:|---:|---:|
 | Dense only | 0.375 | 0.583 | 0.625 | 0.501 |
 | Lexical only | 0.625 | 0.875 | 0.917 | 0.738 |
 | Flat hybrid (RRF) | 0.458 | 0.708 | 0.750 | 0.584 |
+| **Hierarchical hybrid** | **0.750** | **0.958** | **1.000** | **0.858** |
+
+*Independent validation set* (new queries, not used during tuning) — final hierarchical retriever:
+
+| Strategy | Hit@1 | Hit@3 | Hit@5 | MRR |
+|---|---:|---:|---:|---:|
 | **Hierarchical hybrid (final)** | **1.000** | **1.000** | **1.000** | **1.000** |
 
 Proper names and places carry a strong lexical signal in this corpus, which is why lexical weight dominates and why selecting the canto first removes most errors.
