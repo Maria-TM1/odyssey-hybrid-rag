@@ -1,0 +1,16 @@
+[
+  {
+    "mode": "canto_selection",
+    "queries": 24,
+    "hit_at_1": 1,
+    "hit_at_3": 1
+  },
+  {
+    "mode": "hierarchical",
+    "queries": 24,
+    "hit_at_1": 1,
+    "hit_at_3": 1,
+    "hit_at_5": 1,
+    "mrr": 1.0
+  }
+]

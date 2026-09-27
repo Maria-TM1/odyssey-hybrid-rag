@@ -1,0 +1,36 @@
+# Configuración del recuperador jerárquico de La Odisea
+# Nivel 1: perfiles de canto
+# Nivel 2: chunks narrativos dentro de los cantos candidatos
+
+collection_name: odisea_chunks_v1
+offline_collection_name: odisea_chunks_v1_hashing
+canto_collection_name: odisea_canto_profiles_v1
+offline_canto_collection_name: odisea_canto_profiles_v1_hashing
+embedding_backend: fastembed
+embedding_model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+vector_size: 384
+distance: cosine
+
+retrieval:
+  # Configuración ya ajustada en el piloto de chunks
+  dense_candidates: 12
+  lexical_candidates: 12
+  final_top_k: 8
+  rrf_k: 5
+  dense_weight: 0.25
+  lexical_weight: 0.75
+
+hierarchical:
+  # Primero se seleccionan cantos y luego chunks dentro de esos cantos.
+  canto_top_k: 5
+  canto_dense_candidates: 8
+  canto_lexical_candidates: 8
+  canto_rrf_k: 5
+  canto_dense_weight: 0.35
+  canto_lexical_weight: 0.65
+  chunks_per_canto: 3
+  final_top_k: 8
+
+context:
+  max_chunks: 5
+  max_words: 1800

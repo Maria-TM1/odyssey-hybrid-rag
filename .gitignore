@@ -1,0 +1,34 @@
+# Secrets
+.env
+*.env
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Data, models and outputs (never published)
+data/
+qdrant_storage/
+outputs/
+runs/
+*.pt
+*.pth
+*.onnx
+*.mp4
+*.avi
+*.zip
+*.rar
+*.sqlite
+*.jsonl
+
+# Documents
+*.docx
+*.pptx
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
